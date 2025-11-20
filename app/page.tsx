@@ -1,13 +1,13 @@
 import Image from "next/image";
 import LoginPage from "./login/page";
-import Dashboard from "./dashboard/page";
-import AppBar from "@/components/appbar";
+import AppBar from "@/components/AppBar";
+import MyLearning from "./mylearning/page";
 
 export default function Home() {
   return (
     <>
       <AppBar />
-      <Dashboard />
+      <MyLearning/>
     </>
   )
 }

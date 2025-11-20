@@ -1,10 +1,12 @@
-import Search from "antd/es/input/Search";
+import { AutoComplete, Space } from "antd";
+import Input from "antd/es/input";
 import { BiSolidCategory } from "react-icons/bi";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
 import { MdEmojiEvents } from "react-icons/md";
 
 export default function AppBar() {
+	const { Search } = Input
 	return (
 		<header className="border-b-gray-50 shadow-sm bg-white">
 			<nav className="flex items-center justify-between px-6 py-4 max-w-screen mx-auto flex-wrap gap-4">
@@ -15,13 +17,14 @@ export default function AppBar() {
 						className="w-24 h-auto"
 					/>
 				</div>
-				<div className="flex items-center gap-6 grow justify-center">
+				<div className="flex items-center gap-6 grow justify-end">
 					<span className="cursor-pointer  hover:text-blue-600"><BiSolidCategory style={{ fontSize: "20px" }} /></span>
-					<Search
-						placeholder="Search courses, topics..."
-						size="large"
-						className="max-w-md w-full"
-					/>
+					{/* <AutoComplete
+						popupMatchSelectWidth={252}
+						style={{ width: 300 }}
+					>
+						<Input.Search size="large" placeholder="input here" enterButton />
+					</AutoComplete> */}
 					<span className="cursor-pointer  hover:text-blue-600"><MdEmojiEvents style={{ fontSize: "20px" }} /></span>
 					<span className="cursor-pointer  hover:text-blue-600"><IoNotifications style={{ fontSize: "20px" }} /></span>
 					<FaCartShopping className="text-xl cursor-pointer hover:text-blue-600" />
