@@ -1,6 +1,6 @@
 
 "use client"
-import AllCourses from "@/components/AllCourses";
+import AllCourses from "@/components/MyLearning/AllCourses";
 import { Tabs } from "antd";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ export default function MyLearning() {
 							label: data[i],
 						}))}
 						tabBarGutter={24}
-						className="block! text-white! mb-0 pb-0 font-bold "
+						className="block! text-white! mb-0 pb-0 font-bold"
 					/>
 				</div>
 			</section>
