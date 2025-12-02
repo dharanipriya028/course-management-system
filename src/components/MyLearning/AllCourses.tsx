@@ -5,11 +5,14 @@ import StreakBoard from "./StreakBoard";
 import FilterAction from "./FilterAction";
 import CourseList from "./CourseList";
 import { AnimatePresence, motion } from "framer-motion";
+import clsx from "clsx";
+import { useTheme } from "@/src/context/themecontext";
 
 export default function AllCourses() {
 	const [isCancel, setIsCancel] = useState(false)
+	const {isDark} = useTheme();
 	return (
-		<div className="mx-2">
+		<div className={clsx("mx-2" , isDark && "bg-gray-700")}>
 			<StreakBoard />
 			<AnimatePresence>
 				{!isCancel &&
@@ -21,7 +24,7 @@ export default function AllCourses() {
 						transition={{ duration: 0.2 }}
 					>
 
-						<div className="border border-gray-300 min-h-[180px] mx-8 rounded-2xl flex flex-row justify-center items-center">
+						<div className="border border-gray-300 min-h-[100px] mx-8 rounded-2xl flex flex-row justify-center items-center">
 							<ImAlarm size={30} color="gray" className="m-6" />
 							<div className="relative">
 								<button className="absolute right-6 top-0 text-gray-500 hover:text-gray-700" onClick={() => { setIsCancel(true) }}>X</button>

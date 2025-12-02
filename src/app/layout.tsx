@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Arvo, Crimson_Text, Geist, Geist_Mono, Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "../context/themecontext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${arvo.variable} ${geistMono.variable} ${josefin.variable} antialiased`}>
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
