@@ -12,7 +12,7 @@ export default function AllCourses() {
 	const [isCancel, setIsCancel] = useState(false)
 	const {isDark} = useTheme();
 	return (
-		<div className={clsx("mx-2" , isDark && "bg-gray-700")}>
+		<div className="mx-2">
 			<StreakBoard />
 			<AnimatePresence>
 				{!isCancel &&
@@ -24,11 +24,11 @@ export default function AllCourses() {
 						transition={{ duration: 0.2 }}
 					>
 
-						<div className="border border-gray-300 min-h-[100px] mx-8 rounded-2xl flex flex-row justify-center items-center">
+						<div className={clsx("border p-4 border-gray-300 min-h-[100px] mx-8 rounded-sm flex flex-row justify-center items-center",isDark && "bg-gray-900")}>
 							<ImAlarm size={30} color="gray" className="m-6" />
 							<div className="relative">
 								<button className="absolute right-6 top-0 text-gray-500 hover:text-gray-700" onClick={() => { setIsCancel(true) }}>X</button>
-								<p className="font-semibold">Schedule Learning Time</p>
+								<p className={clsx("font-semibold",isDark && "text-white")}>Schedule Learning Time</p>
 								<p className="text-sm text-gray-500">Learning a little each day adds up. Research shows that students who make learning a habit are more likely to reach their goals. Set time aside to learn and get reminders using your learning scheduler.</p>
 								<div className="py-4">
 									<button className="border border-purple-700 rounded-md text-purple-700 p-2 text-sm font-bold">

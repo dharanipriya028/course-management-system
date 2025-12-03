@@ -1,6 +1,7 @@
 "use client"
 import { useTheme } from "@/src/context/themecontext";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { BiSolidCategory } from "react-icons/bi";
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -10,6 +11,7 @@ import { MdEmojiEvents } from "react-icons/md";
 
 export default function AppBar() {
 	const { isDark, toggleTheme } = useTheme();
+	const router = useRouter()
 	return (
 		<header className={clsx("border-b-gray-50 shadow-sm isDark", isDark ? "bg-gray-700" : "bg-white")}>
 			<nav className="flex items-center justify-between px-6 py-4 max-w-screen mx-auto flex-wrap gap-4">
@@ -41,10 +43,10 @@ export default function AppBar() {
 					{isDark ? <BsFillMoonStarsFill /> : <IoSunny />}
 				</button>
 				<div className="flex items-center gap-4">
-					<button className={clsx("px-4 py-2 text-sm font-semibold border rounded", isDark && "text-white")}>
+					<button onClick={()=>{router.push('/login')}} className={clsx("px-4 py-2 text-sm font-semibold border rounded", isDark && "text-white")}>
 						Login
 					</button>
-					<button className="px-4 py-2 text-sm font-semibold bg-purple-600 text-white rounded hover:bg-purple-700">
+					<button onClick={()=>{router.push('/signup')}} className="px-4 py-2 text-sm font-semibold bg-purple-600 text-white rounded hover:bg-purple-700">
 						Register
 					</button>
 				</div>

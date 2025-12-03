@@ -5,13 +5,12 @@ import { PiFinnTheHumanFill } from "react-icons/pi";
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from "next/navigation";
 
-
 export default function Signup() {
  const route = useRouter()
  const [showLogin, setShowLogin] = useState(false);
  const [userDetails, setUserDetails] = useState({ name: "", password: "" ,confirmPassword:""})
  function handleSignin() {
-  route.push('/dashboard')
+  route.push('/')
  }
  return (
   <div className="h-screen flex items-center justify-center">

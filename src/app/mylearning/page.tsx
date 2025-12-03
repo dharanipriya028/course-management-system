@@ -4,7 +4,7 @@ import AllCourses from "@/src/components/MyLearning/AllCourses";
 import { useTheme } from "@/src/context/themecontext";
 import { ConfigProvider, Tabs } from "antd";
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function MyLearning() {
@@ -14,6 +14,9 @@ export default function MyLearning() {
 		setActiveTab(e)
 	}
 	const { isDark } = useTheme();
+	// useEffect(()=>{
+	// 	const getUser
+	// },[])
 	return (
 		<div className={clsx(" pt-8 pb-0 px-4 ", isDark ? "bg-gray-700" : "bg-gray-100")}>
 			<section className={clsx(" pt-8 pb-0 px-4 ", isDark ? "bg-gray-800" : "bg-gray-100")}>

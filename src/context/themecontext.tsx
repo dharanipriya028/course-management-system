@@ -5,8 +5,6 @@ const ThemeContext = createContext({isDark:false , toggleTheme:()=>{}})
 export const ThemeProvider = ({children}:{children:React.ReactNode}) => {
  const [isDark,setIsDark] = useState(false);
  const toggleTheme = () => setIsDark((prev) => !prev)
-
- console.log("-----------isDark",isDark)
  return(
   <ThemeContext.Provider value = {{isDark,toggleTheme}}>
    {children}
